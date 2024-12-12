@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace business
-{
+{//mark 12/12
     public class Customer
     {
         private int id;
@@ -22,7 +22,7 @@ namespace business
             this.kamutIskaot = 0;
         }
         public void MakeIska(int amount)
-        {
+        {// get amount of deal. if in club get 10% discount, if more then 10 deals or 1000 shek become club member
             this.kamutIskaot++;
             if (!clubMember)
             {
@@ -36,6 +36,11 @@ namespace business
             {
                 clubMember = true;
             }
+        }
+        public override string ToString()
+        {
+            string str2return = "id: " + this.id + " name: " + this.name + " is club member: " + this.clubMember + " kamut iskaot: " + this.kamutIskaot + " total iskaot: " + this.totalIskaot;
+            return str2return;
         }
         public bool IsBetterCustomer(Customer other)
         {
